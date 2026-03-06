@@ -47,8 +47,7 @@ public class AuthController : ControllerBase
             HttpOnly = true,
             Secure = !env.IsDevelopment(),
             SameSite = SameSiteMode.Lax,
-            Path = "/",
-            Expires = DateTime.UtcNow.AddDays(_jwtSettings.RefreshExpiryDays)
+            MaxAge = TimeSpan.FromDays(_jwtSettings.RefreshExpiryDays),
         };
     }
 
