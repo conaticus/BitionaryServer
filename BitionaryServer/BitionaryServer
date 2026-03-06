@@ -1,0 +1,6 @@
+@BitionaryServer = http://localhost:5295
+
+GET {{BitionaryServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
