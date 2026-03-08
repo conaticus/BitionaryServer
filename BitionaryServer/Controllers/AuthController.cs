@@ -120,6 +120,13 @@ public class AuthController : ControllerBase
         return Ok(new { accessToken });
     }
 
+    [HttpDelete("logout")]
+    public IActionResult Logout()
+    {
+        Response.Cookies.Delete("refreshToken");
+        return Ok();
+    }
+
     [HttpPost("refresh")]
     public async Task<IActionResult> Refresh()
     {
